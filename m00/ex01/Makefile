@@ -1,7 +1,7 @@
-NAME=megaphone
+NAME=PhoneBook
 CC=c++
 CPPFLAGS=-Wall -Wextra -Werror -std=c++98
-SRC=megaphone.cpp
+SRC=PhoneBook.cpp PhoneBook.hpp Contact.cpp Contact.hpp main.cpp
 
 all: $(NAME)
 

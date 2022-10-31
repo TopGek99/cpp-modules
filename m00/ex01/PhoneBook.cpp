@@ -1,4 +1,5 @@
 #include "PhoneBook.hpp"
+#include <iomanip>
 #include <iostream>
 
 PhoneBook::PhoneBook() {
@@ -6,8 +7,8 @@ PhoneBook::PhoneBook() {
 	contactAmount = 0;
 }
 
-void PhoneBook::addContact(Contact newContact) {
-	contacts[contactIndex] = newContact;
+void PhoneBook::addContact(std::string ln, std::string fn, std::string nn, std::string ds, std::string p) {
+	contacts[contactIndex] = Contact(ln, fn, nn, ds, p);
 	if (contactAmount < 8)
 		contactAmount++;
 	if (contactIndex < 7)
@@ -16,39 +17,47 @@ void PhoneBook::addContact(Contact newContact) {
 		contactIndex = 0;
 }
 
-void PhoneBook::printContacts(void) {
-	std::cout << "     index|first name| last name|  nickname";
+int PhoneBook::printContacts(void) {
+	if (contactAmount == 0) {
+		std::cout << "No Contacts!" << std::endl;
+		return (1);
+	}
+	std::cout << "     index|first name| last name|  nickname" << std::endl;
 	for (int i=0;i<contactAmount;i++) {
 		std::cout << "         " << i << '|';
-		for (int j=0;j<(10-contacts[i].firstName.length());j++)
-			std::cout << ' ';
-		for (int j=0;j<10;j++)
-			std::cout << contacts[i].firstName.at(j);
-		if (contacts[i].firstName.length() > 10)
-			std::cout << '.';
+		if (contacts[i].getFirstName().length() <= 10)
+			std::cout << std::setfill(' ') << std::setw(10) << contacts[i].getFirstName();
+		else
+			std::cout << std::setw(9) << contacts[i].getFirstName().substr(0,9) << '.';
 		std::cout << '|';
-		for (int j=0;j<(10-contacts[i].lastName.length());j++)
-			std::cout << ' ';
-		for (int j=0;j<10;j++)
-			std::cout << contacts[i].lastName.at(j);
-		if (contacts[i].lastName.length() > 10)
-			std::cout << '.';
+		if (contacts[i].getLastName().length() <= 10)
+			std::cout << std::setfill(' ') << std::setw(10) << contacts[i].getLastName();
+		else
+			std::cout << std::setw(9) << contacts[i].getLastName().substr(0,9) << '.';
 		std::cout << '|';
-		for (int j=0;j<(10-contacts[i].nickname.length());j++)
-			std::cout << ' ';
-		for (int j=0;j<10;j++)
-			std::cout << contacts[i].nickname.at(j);
-		if (contacts[i].nickname.length() > 10)
-			std::cout << '.';
+		if (contacts[i].getNickname().length() <= 10)
+			std::cout << std::setfill(' ') << std::setw(10) << contacts[i].getNickname();
+		else
+			std::cout << std::setw(9) << contacts[i].getNickname().substr(0,9) << '.';
+		std::cout << std::endl;
 	}
+	return (0);
 }
 
-void PhoneBook::getContact(int num) {
+int PhoneBook::getContact(int num) {
 	if (num >= contactAmount || num < 0) {
 		std::cout << "Invalid Index" << std::endl;
-		return ;
+		return (1);
 	}
-	
+	std::cout << "First Name: " << contacts[num].getFirstName() << std::endl;
+	std::cout << "Last Name: " << contacts[num].getLastName() << std::endl;
+	std::cout << "Nickname: " << contacts[num].getNickname() << std::endl;
+	std::cout << "Phone: " << contacts[num].getPhone() << std::endl;
+	return (0);
 }
 
-PhoneBook::~PhoneBook() {}
+PhoneBook::~PhoneBook() {
+	for (int i=0;i < contactAmount;i++) {
+		contacts[i].~Contact();
+	}
+}

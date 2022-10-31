@@ -2,13 +2,14 @@
 #define PHONEBOOK_H
 
 #include "Contact.hpp"
+#include <string>
 
 class PhoneBook {
 	public:
 		PhoneBook();
-		void addContact(Contact newContact);
-		void getContact(int num);
-		void printContacts(void);
+		void addContact(std::string ln, std::string fn, std::string nn, std::string ds, std::string p);
+		int getContact(int num);
+		int printContacts(void);
 		~PhoneBook();
 	private:
 		int contactIndex;
