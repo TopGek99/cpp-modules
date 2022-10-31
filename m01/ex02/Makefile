@@ -1,7 +1,7 @@
-NAME=Zombie
+NAME=References
 CC=c++
 CPPFLAGS=-Wall -Wextra -Werror -std=c++98
-SRC=Zombie.h Zombie.cpp Zombie.hpp zombieHorde.cpp main.cpp
+SRC=main.cpp
 
 all: $(NAME)
 
