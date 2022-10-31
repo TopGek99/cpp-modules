@@ -36,6 +36,8 @@ int main(void) {
 				}
 				index = -1;
 			}
+		} else {
+			std::cout << "Invalid Command" << std::endl;
 		}
 	}
 }
