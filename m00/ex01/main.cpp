@@ -4,7 +4,7 @@
 int main(void) {
 	std::string command;
 	std::string f, l, n, p, d;
-	int index = 1;
+	int index = -1;
 	PhoneBook book = PhoneBook();
 
 	while (1) {
@@ -29,11 +29,12 @@ int main(void) {
 			book.addContact(l, f, n, d, p);
 		} else if (command.compare("SEARCH") == 0) {
 			if (book.printContacts() == 0) {
-				while (index == 1) {
+				while (index == -1) {
 					std::cout << "Enter index: ";
 					std::cin >> index;
-					book.getContact(index);
+					index = book.getContact(index);
 				}
+				index = -1;
 			}
 		}
 	}

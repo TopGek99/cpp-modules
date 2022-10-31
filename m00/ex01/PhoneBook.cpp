@@ -47,7 +47,7 @@ int PhoneBook::printContacts(void) {
 int PhoneBook::getContact(int num) {
 	if (num >= contactAmount || num < 0) {
 		std::cout << "Invalid Index" << std::endl;
-		return (1);
+		return (-1);
 	}
 	std::cout << "First Name: " << contacts[num].getFirstName() << std::endl;
 	std::cout << "Last Name: " << contacts[num].getLastName() << std::endl;
