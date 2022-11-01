@@ -9,7 +9,7 @@ class HumanB {
 	public:
 		HumanB(std::string n);
 		void attack(void);
-		void setWeapon(Weapon *newWeapon);
+		void setWeapon(Weapon &newWeapon);
 		~HumanB();
 	private:
 		Weapon *weapon;
