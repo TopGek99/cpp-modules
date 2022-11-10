@@ -3,7 +3,7 @@ NAME = PhoneBook
 
 INC = inc
 HEADERS = -I$(INC)
-FLAGS = -Wall -Werror -Wextra $(HEADERS)
+FLAGS = -Wall -Werror -Wextra -std=c++98 $(HEADERS)
 
 all:
 	@clear

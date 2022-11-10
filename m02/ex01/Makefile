@@ -1,5 +1,5 @@
 SRC = src/*.cpp
-NAME = Violence
+NAME = BetterFixed
 
 INC = inc
 HEADERS = -I$(INC)
