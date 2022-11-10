@@ -8,8 +8,9 @@ class Fixed {
 	public:
 		Fixed();
 		Fixed(Fixed &old);
-		Fixed &operator=(const Fixed &num);
-		void complain(std::string level);
+		void operator=(Fixed &num);
+		int getRawBits(void);
+		void setRawBits(int const raw);
 		~Fixed();
 	private:
 		int value;

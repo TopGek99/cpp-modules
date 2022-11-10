@@ -1,20 +1,18 @@
-NAME=Replace
-CC=c++
-CPPFLAGS=-Wall -Wextra -Werror -std=c++98
-SRC=main.cpp
+NAME = Replace
 
-all: $(NAME)
+FLAGS = -Wall -Werror -Wextra
 
-$(NAME):
-	clear
-	$(CC) $(SRC) $(CPPFLAGS) -o $(NAME)
-
-.PHONY: clean
+all:
+	@clear
+	@c++ main.cpp $(FLAGS) -o $(NAME)
+	@echo Good to go
+	
 
 clean:
-	rm -f *.o
+	@clear
+	@rm -f $(NAME)
+	@echo output files removed
 
-fclean:
-	rm -f *.o $(NAME)
+fclean: clean
 
-re: fclean all
+re: clean all

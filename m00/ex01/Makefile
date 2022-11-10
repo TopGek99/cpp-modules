@@ -1,19 +1,21 @@
-NAME=PhoneBook
-CC=c++
-CPPFLAGS=-Wall -Wextra -Werror -std=c++98
-SRC=PhoneBook.cpp PhoneBook.hpp Contact.cpp Contact.hpp main.cpp
+SRC = src/*.cpp
+NAME = PhoneBook
 
-all: $(NAME)
+INC = inc
+HEADERS = -I$(INC)
+FLAGS = -Wall -Werror -Wextra $(HEADERS)
 
-$(NAME):
-	$(CC) $(SRC) $(CPPFLAGS) -o $(NAME)
-
-.PHONY: clean
+all:
+	@clear
+	@c++ $(SRC) $(FLAGS) -o $(NAME)
+	@echo Good to go
+	
 
 clean:
-	rm -f *.o
+	@clear
+	@rm -f $(NAME)
+	@echo output files removed
 
-fclean:
-	rm -f *.o $(NAME)
+fclean: clean
 
-re: fclean all
+re: clean all
