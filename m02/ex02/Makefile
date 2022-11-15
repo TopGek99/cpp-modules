@@ -1,5 +1,5 @@
 SRC = src/*.cpp
-NAME = BetterFixed
+NAME = BestFixed
 
 INC = inc
 HEADERS = -I$(INC)
