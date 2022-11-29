@@ -1,6 +1,5 @@
 #include "BetterFixed.hpp"
 
-
 int main(void) {
 	BetterFixed a;
 	//int constructor
