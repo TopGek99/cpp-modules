@@ -38,9 +38,9 @@ void ClapTrap::attack(const std::string &target) {
 		std::cout << "ClapTrap " << name << " attacks " << target << ", causing " << dmg << " points of damage!" << std::endl;
 		ep--;
 	} else if (hp <= 0)
-		std::cout << name << " is dead and cannot attack!" << std::endl;
+		std::cout << "ClapTrap " << name << " is dead and cannot attack!" << std::endl;
 	else
-		std::cout << "Insufficient energy to attack!" << std::endl;
+		std::cout << "ClapTrap " << name << " has insufficient energy to attack!" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
@@ -48,9 +48,9 @@ void ClapTrap::takeDamage(unsigned int amount) {
 		std::cout << "ClapTrap " << name << " took " << amount << " points of damage!" << std::endl;
 		hp -= amount;
 		if (hp <= 0)
-			std::cout << name << " died!" << std::endl;
+			std::cout << "ClapTrap " << name << " died!" << std::endl;
 	} else
-		std::cout << name << " is already dead!" << std::endl;
+		std::cout << "ClapTrap " << name << " is already dead!" << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
@@ -59,9 +59,9 @@ void ClapTrap::beRepaired(unsigned int amount) {
 		hp += amount;
 		ep--;
 	} else if (hp <= 0)
-		std::cout << name << " is dead and cannot repair itself!" << std::endl;
+		std::cout << "ClapTrap " << name << " is dead and cannot repair itself!" << std::endl;
 	else
-		std::cout << "Insufficient energy to repair!" << std::endl;
+		std::cout << "ClapTrap " << name << " has insufficient energy to repair!" << std::endl;
 }
 
 ClapTrap::~ClapTrap() {
