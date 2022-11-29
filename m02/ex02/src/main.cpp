@@ -23,16 +23,25 @@ int main(void) {
 		std::cout << "not tie" << std::endl;
 
 	// ARITHMETIC OPERATORS
-	BestFixed d( 3 );
-	BestFixed e( 2 );
+	BestFixed const d( 15 );
+	BestFixed const e( -3 );
 	std::cout << "d + e = " << d + e << std::endl;
 	std::cout << "d - e = " << d - e << std::endl;
 	std::cout << "e - d = " << e - d << std::endl;
 	std::cout << "d * e = " << d * e << std::endl;
 	std::cout << "d / e = " << d / e << std::endl;
 	std::cout << "e / d = " << e / d << std::endl;
-	std::cout << "++d = " << ++d << std::endl;
-	std::cout << "e++ = " << e++ << std::endl;
-	std::cout << "e++ = " << e << " (after post-increment)" << std::endl;
+
+	// INCREMENT OPERATORS
+	BestFixed f;
+	BestFixed g( 2 );
+	std::cout << "++f = " << ++f << std::endl;
+	std::cout << "g++ = " << g++ << std::endl;
+	std::cout << "g++ = " << g << " (after post-increment)" << std::endl;
+	BestFixed h;
+	BestFixed i( 2 );
+	std::cout << "--h = " << --h << std::endl;
+	std::cout << "i-- = " << i-- << std::endl;
+	std::cout << "i-- = " << i << " (after post-decrement)" << std::endl;
 	return 0;
 }
