@@ -111,25 +111,25 @@ BestFixed BestFixed::operator--(int) {
 	return (temp);
 }
 
-BestFixed BestFixed::min(BestFixed &a, BestFixed &b) {
+BestFixed &BestFixed::min(BestFixed &a, BestFixed &b) {
 	if (a < b)
 		return (a);
 	return (b);
 }
 
-BestFixed BestFixed::min(BestFixed const &a, BestFixed const &b) const {
+BestFixed const &BestFixed::min(BestFixed const &a, BestFixed const &b) {
 	if (a < b)
 		return (a);
 	return (b);
 }
 
-BestFixed BestFixed::max(BestFixed &a, BestFixed &b) const {
+BestFixed &BestFixed::max(BestFixed &a, BestFixed &b) {
 	if (a > b)
 		return (a);
 	return (b);
 }
 
-BestFixed BestFixed::max(BestFixed const &a, BestFixed const &b) {
+BestFixed const &BestFixed::max(BestFixed const &a, BestFixed const &b) {
 	if (a > b)
 		return (a);
 	return (b);
