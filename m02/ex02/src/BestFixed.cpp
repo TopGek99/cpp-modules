@@ -117,13 +117,13 @@ BestFixed BestFixed::min(BestFixed &a, BestFixed &b) {
 	return (b);
 }
 
-BestFixed BestFixed::min(BestFixed const &a, BestFixed const &b) {
+BestFixed BestFixed::min(BestFixed const &a, BestFixed const &b) const {
 	if (a < b)
 		return (a);
 	return (b);
 }
 
-BestFixed BestFixed::max(BestFixed &a, BestFixed &b) {
+BestFixed BestFixed::max(BestFixed &a, BestFixed &b) const {
 	if (a > b)
 		return (a);
 	return (b);
