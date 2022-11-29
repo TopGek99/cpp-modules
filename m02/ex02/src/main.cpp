@@ -24,10 +24,12 @@ int main(void) {
 
 	// ARITHMETIC OPERATORS
 	BestFixed const d( 15 );
-	BestFixed const e( 3 );
+	BestFixed const e( 2 );
 	std::cout << "d + e = " << d + e << std::endl;
 	std::cout << "d - e = " << d - e << std::endl;
 	std::cout << "e - d = " << e - d << std::endl;
 	std::cout << "d * e = " << d * e << std::endl;
+	std::cout << "d / e = " << d / e << std::endl;
+	std::cout << "e / d = " << e / d << std::endl;
 	return 0;
 }
