@@ -64,6 +64,13 @@ BestFixed BestFixed::operator+(const BestFixed &num) const {
 	return (res);
 }
 
+BestFixed BestFixed::operator-(const BestFixed &num) const {
+	// std::cout << "Plus arithmetic operator called" << std::endl;
+	BestFixed res;
+	res.setRawBits(value - num.getRawBits());
+	return (res);
+}
+
 int BestFixed::getRawBits(void) const {
 	// std::cout << "getRawBits member function called" << std::endl;
 	return (value);
