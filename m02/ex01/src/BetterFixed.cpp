@@ -45,11 +45,11 @@ float BetterFixed::toFloat(void) const {
 	return ((float)value / (float)(1 << bits));
 }
 
-BetterFixed::~BetterFixed() {
-	std::cout << "Destructor called" << std::endl;
-}
-
 std::ostream& operator<< (std::ostream& stream, const BetterFixed& Fixed) {
 	stream << Fixed.toFloat();
 	return (stream);
+}
+
+BetterFixed::~BetterFixed() {
+	std::cout << "Destructor called" << std::endl;
 }
