@@ -74,7 +74,14 @@ BestFixed BestFixed::operator-(const BestFixed &num) const {
 BestFixed BestFixed::operator*(const BestFixed &num) const {
 	// std::cout << "Plus arithmetic operator called" << std::endl;
 	BestFixed res;
-	res.setRawBits((value * num.getRawBits()) >> 8);
+	res.setRawBits((value * num.getRawBits()) >> bits);
+	return (res);
+}
+
+BestFixed BestFixed::operator/(const BestFixed &num) const {
+	// std::cout << "Plus arithmetic operator called" << std::endl;
+	BestFixed res;
+	res.setRawBits((value << bits)/ num.getRawBits());
 	return (res);
 }
 
