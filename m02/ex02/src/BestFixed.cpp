@@ -111,6 +111,30 @@ BestFixed BestFixed::operator--(int) {
 	return (temp);
 }
 
+BestFixed BestFixed::min(BestFixed &a, BestFixed &b) {
+	if (a < b)
+		return (a);
+	return (b);
+}
+
+BestFixed BestFixed::min(BestFixed const &a, BestFixed const &b) {
+	if (a < b)
+		return (a);
+	return (b);
+}
+
+BestFixed BestFixed::max(BestFixed &a, BestFixed &b) {
+	if (a > b)
+		return (a);
+	return (b);
+}
+
+BestFixed BestFixed::max(BestFixed const &a, BestFixed const &b) {
+	if (a > b)
+		return (a);
+	return (b);
+}
+
 int BestFixed::getRawBits(void) const {
 	// std::cout << "getRawBits member function called" << std::endl;
 	return (value);
