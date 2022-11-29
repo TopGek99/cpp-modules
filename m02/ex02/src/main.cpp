@@ -1,6 +1,12 @@
 #include "BestFixed.hpp"
 
 int main(void) {
+	// COMPARISON OPERATORS
+	// change b and c value so that:
+	// 1. they are equal
+	// 2. b is greater than c
+	// 3. b is less than c
+	// 4. use different arrangements of float and int as input to test accuracy (initial values do this)
 	BestFixed const b( 167 );
 	BestFixed const c( 167.2f );
 	if (b > c)
@@ -15,5 +21,12 @@ int main(void) {
 		std::cout << "tie" << std::endl;
 	if (b != c)
 		std::cout << "not tie" << std::endl;
+
+	// ARITHMETIC OPERATORS
+	BestFixed const d( 15 );
+	BestFixed const e( 167.2f );
+	std::cout << "d + e = " << d + e << std::endl;
+	std::cout << "d - e = " << d - e << std::endl;
+	std::cout << "e - d = " << e - d << std::endl;
 	return 0;
 }
