@@ -7,11 +7,11 @@ int main(void) {
 	Fixed b( a );
 	//Default constructor
 	Fixed c;
-	//setRawBits
+	//setRawBits method
 	b.setRawBits(8);
 	//Copy assignment operator overload
 	c = b;
-	//getRawBits
+	//getRawBits method
 	std::cout << "raw bits of a:\n" << a.getRawBits() << std::endl;
 	std::cout << "raw bits of b:\n" << b.getRawBits() << std::endl;
 	std::cout << "raw bits of c:\n" << c.getRawBits() << std::endl;
