@@ -23,14 +23,16 @@ int main(void) {
 		std::cout << "not tie" << std::endl;
 
 	// ARITHMETIC OPERATORS
-	BestFixed d;
+	BestFixed d( 3 );
 	BestFixed e( 2 );
 	std::cout << "d + e = " << d + e << std::endl;
 	std::cout << "d - e = " << d - e << std::endl;
 	std::cout << "e - d = " << e - d << std::endl;
 	std::cout << "d * e = " << d * e << std::endl;
 	std::cout << "d / e = " << d / e << std::endl;
-	// std::cout << "e / d = " << e / d << std::endl;
+	std::cout << "e / d = " << e / d << std::endl;
 	std::cout << "++d = " << ++d << std::endl;
+	std::cout << "e++ = " << e++ << std::endl;
+	std::cout << "e++ = " << e << " (after post-increment)" << std::endl;
 	return 0;
 }
