@@ -1,5 +1,5 @@
 SRC = src/*.cpp
-NAME = BestFixed
+NAME = ClapTrap
 
 INC = inc
 HEADERS = -I$(INC)
