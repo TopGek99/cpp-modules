@@ -85,6 +85,33 @@ BestFixed BestFixed::operator/(const BestFixed &num) const {
 	return (res);
 }
 
+BestFixed &BestFixed::operator++(void) {
+	// std::cout << "pre-increment operator called" << std::endl;
+	value++;
+	return (*this);
+}
+
+// BestFixed BestFixed::operator++(int plus) const {
+// 	// std::cout << "post-increment operator called" << std::endl;
+// 	BestFixed res;
+// 	res.setRawBits(value + num.getRawBits());
+// 	return (res);
+// }
+
+// BestFixed &BestFixed::operator--(void) const {
+// 	// std::cout << "pre-decrement operator called" << std::endl;
+// 	BestFixed res;
+// 	res.setRawBits(value + num.getRawBits());
+// 	return (res);
+// }
+
+// BestFixed BestFixed::operator--(int minus) const {
+// 	// std::cout << "post-decrement operator called" << std::endl;
+// 	BestFixed res;
+// 	res.setRawBits(value + num.getRawBits());
+// 	return (res);
+// }
+
 int BestFixed::getRawBits(void) const {
 	// std::cout << "getRawBits member function called" << std::endl;
 	return (value);
