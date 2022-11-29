@@ -2,11 +2,6 @@
 
 int main(void) {
 	// COMPARISON OPERATORS
-	// change b and c value so that:
-	// 1. they are equal
-	// 2. b is greater than c
-	// 3. b is less than c
-	// 4. use different arrangements of float and int as input to test accuracy (initial values do this)
 	BestFixed const b( 167 );
 	BestFixed const c( 167.2f );
 	if (b > c)
