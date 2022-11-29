@@ -43,5 +43,15 @@ int main(void) {
 	std::cout << "--h = " << --h << std::endl;
 	std::cout << "i-- = " << i-- << std::endl;
 	std::cout << "i-- = " << i << " (after post-decrement)" << std::endl;
+
+	// MIN AND MAX MEMBER FUNCTIONS
+	BestFixed j( 5 );
+	BestFixed k( 13.34f );
+	std::cout << "min: " << j.min(j, k) << std::endl;
+	std::cout << "max: " << j.max(j, k) << std::endl;
+	BestFixed const l( 25 );
+	BestFixed const m( 6.54f );
+	std::cout << "min: " << l.min(l, m) << std::endl;
+	std::cout << "max: " << l.max(l, m) << std::endl;
 	return 0;
 }
