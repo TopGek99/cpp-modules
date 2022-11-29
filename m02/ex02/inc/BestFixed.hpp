@@ -27,8 +27,8 @@ class BestFixed {
 		BestFixed operator--(int);
 		BestFixed &min(BestFixed &a, BestFixed &b);
 		BestFixed &min(BestFixed const &a, BestFixed const &b);
-		BestFixed &max(BestFixed &a, BestFixed &b);
-		BestFixed &max(BestFixed const &a, BestFixed const &b);
+		BestFixed &max(BestFixed &a, BestFixed &b) const;
+		BestFixed &max(BestFixed const &a, BestFixed const &b) const;
 		int getRawBits(void) const;
 		void setRawBits(int const raw);
 		float toFloat(void) const;
