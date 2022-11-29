@@ -54,14 +54,18 @@ void ClapTrap::takeDamage(unsigned int amount) {
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
-	if (hp > 0 && ep > 0) {
+	if (hp > 0 && ep > 0 && hp < 10) {
 		std::cout << "ClapTrap " << name << " was repaired for " << amount << " points of hp!" << std::endl;
 		hp += amount;
+		if (hp > 10)
+			hp = 10;
 		ep--;
 	} else if (hp <= 0)
 		std::cout << "ClapTrap " << name << " is dead and cannot repair itself!" << std::endl;
-	else
+	else if (ep <= 0)
 		std::cout << "ClapTrap " << name << " has insufficient energy to repair!" << std::endl;
+	else
+		std::cout << "ClapTrap " << name << " is at full HP!" << std::endl;
 }
 
 ClapTrap::~ClapTrap() {
