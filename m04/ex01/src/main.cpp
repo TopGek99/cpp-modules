@@ -2,19 +2,16 @@
 #include "Cat.hpp"
 
 int main(void) {
-	Animal a;
-	Cat c;
-	Dog d;
+	Animal *animals[10];
+	Dog a;
+	Dog b(a);
 
-	std::cout << "a type: " << a.getType() << std::endl;
-	std::cout << "c type: " << c.getType() << std::endl;
-	std::cout << "d type: " << d.getType() << std::endl;
-
-	std::cout << "a sound: ";
-	a.makeSound();
-	std::cout << "c sound: ";
-	c.makeSound();
-	std::cout << "d sound: ";
-	d.makeSound();
-	return (0);
+	for (int i=0;i<10;i++) {
+		if (i < 5)
+			animals[i] = new Dog();
+		else
+			animals[i] = new Cat();
+	}
+	for (int i=0;i<10;i++)
+		delete animals[i];
 }
