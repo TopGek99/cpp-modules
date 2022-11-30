@@ -9,6 +9,7 @@ class Cat : public Animal {
 	public:
 		Cat();
 		Cat(Cat &old);
+		Cat &operator=(Cat &old);
 		void makeSound(void);
 		~Cat();
 };
