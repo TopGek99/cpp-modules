@@ -22,6 +22,15 @@ FragTrap::FragTrap(FragTrap &old) : ClapTrap(old) {
 	std::cout << "copy constructor called (FragTrap)" << std::endl;
 }
 
+FragTrap &FragTrap::operator=(FragTrap &old) {
+	std::cout << "assignment operator called" << std::endl;
+	name = old.name;
+	hp = old.hp;
+	ep = old.ep;
+	dmg = old.dmg;
+	return (*this);
+}
+
 void FragTrap::highFivesGuys(void) {
 	std::cout << "FragTrap " << name << " requests the highest of fives" << std::endl;
 }
