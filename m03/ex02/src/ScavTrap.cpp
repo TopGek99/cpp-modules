@@ -22,7 +22,7 @@ ScavTrap::ScavTrap(ScavTrap &old) : ClapTrap(old) {
 	std::cout << "copy constructor called (ScavTrap)" << std::endl;
 }
 
-ClapTrap &ClapTrap::operator=(ClapTrap &old) {
+ScavTrap &ScavTrap::operator=(ScavTrap &old) {
 	std::cout << "assignment operator called" << std::endl;
 	name = old.name;
 	hp = old.hp;
