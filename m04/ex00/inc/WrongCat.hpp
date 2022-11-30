@@ -10,7 +10,7 @@ class WrongCat : public WrongAnimal {
 		WrongCat();
 		WrongCat(WrongCat &old);
 		WrongCat &operator=(WrongCat &old);
-		void makeSound(void);
+		void makeSound(void) const;
 		~WrongCat();
 };
 
