@@ -22,6 +22,15 @@ ScavTrap::ScavTrap(ScavTrap &old) : ClapTrap(old) {
 	std::cout << "copy constructor called (ScavTrap)" << std::endl;
 }
 
+ScavTrap &ScavTrap::operator=(ScavTrap &old) {
+	std::cout << "assignment operator called" << std::endl;
+	name = old.name;
+	hp = old.hp;
+	ep = old.ep;
+	dmg = old.dmg;
+	return (*this);
+}
+
 void ScavTrap::attack(const std::string &target){
 	if (hp > 0 && ep > 0) {
 		std::cout << "ScavTrap " << name << " attacks " << target << ", causing " << dmg << " points of damage!" << std::endl;
