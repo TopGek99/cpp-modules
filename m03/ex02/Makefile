@@ -1,5 +1,5 @@
 SRC = src/*.cpp
-NAME = ScavTrap
+NAME = FragTrap
 
 INC = inc
 HEADERS = -I$(INC)
