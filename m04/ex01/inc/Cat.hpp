@@ -12,7 +12,7 @@ class Cat : public Animal {
 		Cat(Cat &old);
 		Cat &operator=(Cat &old);
 		void makeSound(void);
-		~Cat();
+		virtual ~Cat();
 	private:
 		Brain *b;
 };
