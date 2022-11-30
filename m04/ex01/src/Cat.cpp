@@ -9,13 +9,13 @@ Cat::Cat() {
 Cat::Cat(Cat &old) : Animal(old) {
 	std::cout << "Cat copy constructor called" << std::endl;
 	type = old.type;
-	b = old.b;
+	b = new Brain(*old.b);
 }
 
 Cat &Cat::operator=(Cat &old) {
 	std::cout << "Cat assignment operator called" << std::endl;
 	type = old.type;
-	b = old.b;
+	b = new Brain(*old.b);
 	return (*this);
 }
 
