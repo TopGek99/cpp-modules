@@ -32,6 +32,10 @@ void ScavTrap::attack(const std::string &target){
 		std::cout << "ScavTrap " << name << " has insufficient energy to attack!" << std::endl;
 }
 
+void ScavTrap::guardGate(void) {
+	std::cout << "ScavTrap " << name << " is now in Gatekeeper mode" << std::endl;
+}
+
 ScavTrap::~ScavTrap() {
 	std::cout << "destructor called (ScavTrap)" << std::endl;
 }
