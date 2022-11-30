@@ -4,7 +4,9 @@ int main(void) {
 	ClapTrap a;
 	ClapTrap b("john");
 	ClapTrap c(a);
+	ClapTrap d;
 
+	d = b;
 	// attack member function
 	a.attack("john");
 	// take 0 damage from attack and try repair but cannot as already full HP
@@ -20,7 +22,7 @@ int main(void) {
 	c.beRepaired(10);
 
 	// attacks 10 times, expending all energy points and then attack and beRepaired no longer do anything
-	for (int i=0;i<10;i++) a.attack("someone");
-	b.attack("guy");
-	b.beRepaired(0);
+	for (int i=0;i<10;i++) d.attack("someone");
+	d.attack("guy");
+	d.beRepaired(0);
 }
