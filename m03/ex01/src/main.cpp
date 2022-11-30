@@ -1,14 +1,14 @@
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(void) {
-	ClapTrap a;
-	ClapTrap b("john");
-	ClapTrap c(a);
+	ScavTrap a;
+	ScavTrap b("john");
+	ScavTrap c(a);
 
 	// attack member function
 	a.attack("john");
 	// take 0 damage from attack and try repair but cannot as already full HP
-	b.takeDamage(0);
+	b.takeDamage(20);
 	b.beRepaired(1);
 	// take 1 damage and repair 1 HP normally
 	b.takeDamage(1);
