@@ -9,6 +9,7 @@ class Dog : public Animal {
 	public:
 		Dog();
 		Dog(Dog &old);
+		Dog &operator=(Dog &old);
 		void makeSound(void);
 		~Dog();
 };
