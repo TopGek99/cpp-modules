@@ -10,6 +10,12 @@ Dog::Dog(Dog &old) : Animal(old) {
 	type = old.type;
 }
 
+Dog &Dog::operator=(Dog &old) {
+	std::cout << "Dog assignment operator called" << std::endl;
+	type = old.type;
+	return (*this);
+}
+
 void Dog::makeSound(void) {
 	std::cout << "Woof" << std::endl;
 }
