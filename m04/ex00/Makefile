@@ -1,5 +1,5 @@
 SRC = src/*.cpp
-NAME = FragTrap
+NAME = Animal
 
 INC = inc
 HEADERS = -I$(INC)
