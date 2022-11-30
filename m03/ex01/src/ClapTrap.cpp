@@ -3,6 +3,7 @@
 ClapTrap::ClapTrap() {
 	std::cout << "default constructor called" << std::endl;
 	name = "steve";
+	maxhp = 10;
 	hp = 10;
 	ep = 10;
 	dmg = 0;
@@ -11,6 +12,7 @@ ClapTrap::ClapTrap() {
 ClapTrap::ClapTrap(std::string n) {
 	std::cout << "constructor with name called" << std::endl;
 	name = n;
+	maxhp = 10;
 	hp = 10;
 	ep = 10;
 	dmg = 0;
@@ -45,8 +47,8 @@ void ClapTrap::attack(const std::string &target) {
 
 void ClapTrap::takeDamage(unsigned int amount) {
 	if (hp > 0) {
-		std::cout << "ClapTrap " << name << " took " << amount << " points of damage!" << std::endl;
 		hp -= amount;
+		std::cout << "ClapTrap " << name << " took " << amount << " points of damage! It now has " << hp << " HP." << std::endl;
 		if (hp <= 0)
 			std::cout << "ClapTrap " << name << " died!" << std::endl;
 	} else
@@ -54,11 +56,11 @@ void ClapTrap::takeDamage(unsigned int amount) {
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
-	if (hp > 0 && ep > 0 && hp < 10) {
-		std::cout << "ClapTrap " << name << " was repaired for " << amount << " points of hp!" << std::endl;
+	if (hp > 0 && ep > 0 && hp < maxhp) {
 		hp += amount;
-		if (hp > 10)
-			hp = 10;
+		if (hp > maxhp)
+			hp = maxhp;
+		std::cout << "ClapTrap " << name << " was repaired for " << amount << " points of hp! It now has " << hp << " HP." << std::endl;
 		ep--;
 	} else if (hp <= 0)
 		std::cout << "ClapTrap " << name << " is dead and cannot repair itself!" << std::endl;
