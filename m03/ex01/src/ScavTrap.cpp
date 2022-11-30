@@ -9,7 +9,7 @@ ScavTrap::ScavTrap() {
 	dmg = 20;
 }
 
-ScavTrap::ScavTrap(std::string n) {
+ScavTrap::ScavTrap(std::string n) : ClapTrap(n) {
 	std::cout << "constructor with name called (ScavTrap)" << std::endl;
 	name = n;
 	maxhp = 100;
@@ -21,12 +21,6 @@ ScavTrap::ScavTrap(std::string n) {
 ScavTrap::ScavTrap(ScavTrap &old) : ClapTrap(old) {
 	std::cout << "copy constructor called (ScavTrap)" << std::endl;
 }
-
-// ScavTrap &ScavTrap::operator=(ScavTrap &old) {
-// 	std::cout << "assignment operator called" << std::endl;
-	
-// 	return (*this);
-// }
 
 void ScavTrap::attack(const std::string &target){
 	if (hp > 0 && ep > 0) {
