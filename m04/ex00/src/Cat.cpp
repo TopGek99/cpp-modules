@@ -10,6 +10,12 @@ Cat::Cat(Cat &old) : Animal(old) {
 	type = old.type;
 }
 
+Cat &Cat::operator=(Cat &old) {
+	std::cout << "Cat assignment operator called" << std::endl;
+	type = old.type;
+	return (*this);
+}
+
 void Cat::makeSound(void) {
 	std::cout << "Meow" << std::endl;
 }
