@@ -16,7 +16,7 @@ Animal &Animal::operator=(Animal &old) {
 	return (*this);
 }
 
-void Animal::makeSound(void) {
+void Animal::makeSound(void) const {
 	std::cout << "<insert animal sound here>" << std::endl;
 }
 
