@@ -24,4 +24,7 @@ int main(void) {
 	for (int i=0;i<50;i++) d.attack("someone");
 	d.attack("guy");
 	d.beRepaired(0);
+
+	// guardGate member function
+	d.guardGate();
 }
