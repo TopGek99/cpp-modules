@@ -1,4 +1,4 @@
-#include "Zombie.h"
+#include "../inc/Zombie.h"
 
 int main(void) {
 	Zombie* zod = zombieHorde(5, "zombo");
