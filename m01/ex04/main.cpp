@@ -8,11 +8,15 @@ int main(int argc, char *argv[]) {
 	int s1pos;
 
 	if (argc != 4)
+	{
+		std::cout << "Wrong number of inputs!" << std::endl;
 		return (1);
+	}
 	fname = argv[1];
 	s1 = argv[2];
 	s2 = argv[3];
 	
+	std::cout << s1 << std::endl;
 	fin.open(fname.c_str());
 	fout.open((fname+".replace").c_str());
 	while (std::getline(fin, temp)) {

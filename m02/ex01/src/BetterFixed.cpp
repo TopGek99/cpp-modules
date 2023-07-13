@@ -5,26 +5,29 @@ BetterFixed::BetterFixed() {
 	value = 0;
 }
 
-BetterFixed::BetterFixed(BetterFixed &old) : value(old.getRawBits()) {
+BetterFixed::BetterFixed(const BetterFixed &old) {
 	std::cout << "Copy constructor called" << std::endl;
+	*this = old;
 }
 
-BetterFixed::BetterFixed(int const val) : value(val) {
+BetterFixed::BetterFixed(int const val) {
 	std::cout << "Int constructor called" << std::endl;
+	value = val << bits;
 }
 
 
 BetterFixed::BetterFixed(float const val) {
 	std::cout << "Float constructor called" << std::endl;
-	value = (int)val;
+	value = roundf(val * (1 << bits));
 }
 
-void BetterFixed::operator=(BetterFixed &num) {
+BetterFixed &BetterFixed::operator=(const BetterFixed &num) {
 	std::cout << "Copy assignment operator called" << std::endl;
 	value = num.getRawBits();
+	return (*this);
 }
 
-int BetterFixed::getRawBits(void) {
+int BetterFixed::getRawBits(void) const {
 	std::cout << "getRawBits member function called" << std::endl;
 	return (value);
 }
@@ -34,6 +37,19 @@ void BetterFixed::setRawBits(int const raw) {
 	value = raw;
 }
 
+int BetterFixed::toInt(void) const {
+	return (value >> bits);
+}
+
+float BetterFixed::toFloat(void) const {
+	return ((float)value / (float)(1 << bits));
+}
+
 BetterFixed::~BetterFixed() {
 	std::cout << "Destructor called" << std::endl;
+}
+
+std::ostream& operator<< (std::ostream& stream, const BetterFixed& Fixed) {
+	stream << Fixed.toFloat();
+	return (stream);
 }

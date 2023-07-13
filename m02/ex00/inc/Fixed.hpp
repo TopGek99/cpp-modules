@@ -1,15 +1,14 @@
 #ifndef FIXED_HPP
 #define FIXED_HPP
 
-#include <string>
 #include <iostream>
 
 class Fixed {
 	public:
 		Fixed();
 		Fixed(Fixed &old);
-		void operator=(Fixed &num);
-		int getRawBits(void);
+		Fixed &operator=(Fixed &num);
+		int getRawBits(void) const;
 		void setRawBits(int const raw);
 		~Fixed();
 	private:

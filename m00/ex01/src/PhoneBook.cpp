@@ -56,8 +56,4 @@ int PhoneBook::getContact(int num) {
 	return (0);
 }
 
-PhoneBook::~PhoneBook() {
-	for (int i=0;i < contactAmount;i++) {
-		contacts[i].~Contact();
-	}
-}
+PhoneBook::~PhoneBook() {}

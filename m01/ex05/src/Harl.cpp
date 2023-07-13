@@ -34,8 +34,13 @@ std::string strToLower(std::string str) {
 }
 
 void Harl::complain(std::string level) {
-	for (int i=0;i<4;i++)
-		if (strToLower(level) == l[i].lvlName) (this->*l[i].f)(); 
+	for (int i=0;i<4;i++) {
+		if (strToLower(level) == l[i].lvlName) {
+			(this->*l[i].f)();
+			return ;
+		}; 
+	}
+	std::cout << "<insert generic complaint here> (input was not valid complaint level)" << std::endl;
 }
 
 Harl::~Harl() {}

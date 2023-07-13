@@ -11,10 +11,8 @@ int main(void) {
 		std::cout << "ADD, SEARCH or EXIT: ";
 		std::cin >> command;
 		if (command.compare("EXIT") == 0)
-		{
-			book.~PhoneBook();
 			return (0);
-		} else if (command.compare("ADD") == 0) {
+		else if (command.compare("ADD") == 0) {
 			std::cout << "First Name: ";
 			std::cin >> f;
 			std::cout << "Last Name: ";
